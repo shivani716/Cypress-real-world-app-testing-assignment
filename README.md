@@ -1,103 +1,65 @@
-<p align="center">
-  <!-- We use two SVGs here so that this displays correctly
-    on Github. This might not look right in other Markdown previewers. -->
-  <img alt="Cypress Real World App Logo" src="./src/svgs/rwa-logo-light.svg#gh-dark-mode-only" />
-  <img alt="Cypress Real World App Logo" src="./src/svgs/rwa-logo.svg#gh-light-mode-only" />
-</p>
+# Cypress Real-World Application Testing
 
-<p align="center">
-  <a href="https://cypress.io">
-    <img width="140" alt="Cypress Logo" src="./src/svgs/built-by-cypress.svg" />
-    </a>
-</p>
+## Table of Contents
+- [Description](#description)
+- [Features with Assumptions](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Running Tests](#running-tests)
+  - [User Authentication Test](#user-authentication-test)
+  - [Transaction Test](#transaction-test)
+  - [Contact List Test](#contact-list-test)
+  - [Notification Test](#notification-test)
+  - [UI Validation Test](#ui-validation-test)
+- [Custom Commands](#custom-commands)
+- [Contributing](#contributing)
+- [License](#license)
 
-<p align="center">
-   <a href="https://cloud.cypress.io/projects/7s5okt/runs">
-    <img src="https://img.shields.io/endpoint?url=https://cloud.cypress.io/badge/detailed/7s5okt/develop&style=flat&logo=cypress" />
-  </a>
+## Description
+Cypress Real-World Application Testing is a project focused on implementing end-to-end tests for a web application using Cypress. This project covers various user interactions and ensures the functionality of key features such as user authentication, transactions, contact management, notifications, and UI validation.
 
-  <a href="https://codecov.io/gh/cypress-io/cypress-realworld-app">
-    <img src="https://codecov.io/gh/cypress-io/cypress-realworld-app/branch/develop/graph/badge.svg" />
-  </a>
+## Features with Assumptions 
+- User authentication testing : 
+  Contains total 10 executable test cases which tests sign up , login and log out functionalities
+  Custom commands created and used for all above mentioned functionalities
+  
+- Transaction handling and verification
+  Conatins total 4 executable test cases which tests initiate payment , request payment , make payment and advanced test written using intercept command to mock API response 
+  Custom commands created and used for all above mentioned functionalities
+  Contains 2 non executable test cases, written to check balance and history verification from Payer's and recipient’s side (All the steps are written sequentially in comments)
 
-  <a href="https://percy.io/cypress-io/cypress-realworld-app">
-    <img src="https://percy.io/static/images/percy-badge.svg" />
-  </a>
+- Contact list management testing
+  Conatins 1 executable test cases which tests new contact addition , updation and display functionalities 
+  Custom commands created and used for this bank account addition and verification functionality
 
-   <a href="#contributors-">
-    <img src="https://img.shields.io/badge/all_contributors-6-green.svg?style=flat" />
-  </a>
-</p>
+- Notification verification
 
-<p align="center">
-A payment application to demonstrate <strong>real-world</strong> usage of <a href="https://cypress.io">Cypress</a> testing methods, patterns, and workflows.
-</p>
+- UI validation
 
-<p align="center">
-  <img style='width: 70%' alt="Cypress Real World App" src="./public/img/rwa-readme-screenshot.png" />
-</p>
+## Installation
+To get started with this project, follow the steps below:
 
-> 💬 **Note from maintainers**
->
-> This application is purely for demonstration and educational purposes. Its setup and configuration resemble typical real-world applications, but it's not a full-fledged production system. Use this app to learn, experiment, tinker, and practice application testing with Cypress.
->
-> Happy Testing!
-
----
-
-## Features
-
-🛠 Built with [React][reactjs], [XState][xstate], [Express][express], [lowdb][lowdb], [Material-UI][material-ui] and [TypeScript][typescript]
-⚡️ Zero database dependencies
-🚀 Full-stack [Express][express]/[React][reactjs] application with real-world features and tests
-👮‍♂️ Local Authentication
-🔥 Database Seeding with End-to-end Tests
-💻 CI/CD + [Cypress Cloud][cypresscloud]
-
-## Getting Started
-
-The Cypress Real-World App (RWA) is a full-stack Express/React application backed by a local JSON database ([lowdb]).
-
-The app is bundled with [example data](./data/database.json) (`data/database.json`) that contains everything you need to start using the app and run tests out-of-the-box.
-
-> 🚩 **Note**
->
-> You can login to the app with any of the [example app users](./data/database.json#L2). The default password for all users is `s3cret`.
-> Example users can be seen by running `yarn list:dev:users`.
-
-### Prerequisites
-
-This project requires [Node.js](https://nodejs.org/en/) to be installed on your machine. Refer to the [.node-version](./.node-version) file for the exact version.
-
-[Yarn Classic](https://classic.yarnpkg.com/) is also required. Once you have [Node.js](https://nodejs.org/en/) installed, execute the following to install the npm module [yarn](https://www.npmjs.com/package/yarn) (Classic - version 1) globally.
-
-```shell
-npm install yarn@latest -g
-```
-
-If you have Node.js' experimental [Corepack](https://nodejs.org/dist/latest/docs/api/corepack.html) feature enabled, then you should skip the step `npm install yarn@latest -g` to install Yarn Classic globally. The RWA project is locally configured for `Corepack` to use Yarn Classic (version 1).
-
-#### Yarn Modern
-
-**This project is not compatible with [Yarn Modern](https://yarnpkg.com/) (version 2 and later).**
-
-### Installation
-
-```shell
-yarn
-```
-
-#### Mac users with M-series chips will need to prepend `PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true`.
-
-```shell
-PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true yarn install
-```
-
-### Run the app
-
-```shell
-yarn dev
-```
+1. Clone the repository:
+    ```sh
+    git clone https://github.com/yourusername/cypress-real-world-app.git
+    ```
+2. Navigate to the project directory:
+    ```sh
+    cd cypress-real-world-app
+    ```
+3. Install the dependencies:
+    ```sh
+    yarn install
+     ```
+4. start the application server:
+     ```sh
+    yarn start
+    ```
+## Usage
+VS code source course editor is used for implementation and execution
+To open Cypress Test Runner, run the following command:
+```sh
+npx cypress open
 
 > 🚩 **Note**
 >
