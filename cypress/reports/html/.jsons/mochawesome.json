@@ -1,0 +1,323 @@
+{
+  "stats": {
+    "suites": 4,
+    "tests": 8,
+    "passes": 2,
+    "pending": 0,
+    "failures": 6,
+    "start": "2024-06-24T18:16:50.814Z",
+    "end": "2024-06-24T18:16:54.634Z",
+    "duration": 3820,
+    "testsRegistered": 8,
+    "passPercent": 25,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "6fd99d08-02bc-44ee-8ce1-e887cffc02dd",
+      "title": "",
+      "fullFile": "cypress\\integration\\contactList.spec.js",
+      "file": "cypress\\integration\\contactList.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "7939624b-35a5-4103-a662-b3d08fc59184",
+          "title": "Contact Management",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [],
+          "suites": [
+            {
+              "uuid": "47b220c0-1cf5-416f-b15f-509ee573cad4",
+              "title": "Add New Contact",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "should allow a user to add a new contact with valid details",
+                  "fullTitle": "Contact Management Add New Contact should allow a user to add a new contact with valid details",
+                  "timedOut": null,
+                  "duration": 185,
+                  "state": "failed",
+                  "speed": null,
+                  "pass": false,
+                  "fail": true,
+                  "pending": false,
+                  "context": "{\n  \"title\": \"cypress-mochawesome-reporter-screenshots\",\n  \"value\": [\n    [\n      \"\\\\contactList.spec.js\\\\Contact Management -- Add New Contact -- should allow a user to add a new contact with valid details (failed).png\"\n    ],\n    [\n      \"\\\\contactList.spec.js\\\\Contact Management -- Add New Contact -- should allow a user to add a new contact with valid details (failed) (attempt 2).png\"\n    ],\n    [\n      \"\\\\contactList.spec.js\\\\Contact Management -- Add New Contact -- should allow a user to add a new contact with valid details (failed) (attempt 3).png\"\n    ]\n  ]\n}",
+                  "code": "cy.addContact('Shivani', '1234567890', 'shivani@example.com');\ncy.contains('Contact added successfully').should('be.visible');",
+                  "err": {
+                    "message": "TypeError: cy.addContact is not a function",
+                    "estack": "TypeError: cy.addContact is not a function\n    at Context.eval (webpack://cypress-realworld-app/./cypress/integration/contactList.spec.js:14:11)",
+                    "diff": null
+                  },
+                  "uuid": "342d7d10-a5f3-4700-93ea-09428a07615f",
+                  "parentUUID": "47b220c0-1cf5-416f-b15f-509ee573cad4",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "should show an error message for missing name",
+                  "fullTitle": "Contact Management Add New Contact should show an error message for missing name",
+                  "timedOut": null,
+                  "duration": 174,
+                  "state": "failed",
+                  "speed": null,
+                  "pass": false,
+                  "fail": true,
+                  "pending": false,
+                  "context": "{\n  \"title\": \"cypress-mochawesome-reporter-screenshots\",\n  \"value\": [\n    [\n      \"\\\\contactList.spec.js\\\\Contact Management -- Add New Contact -- should show an error message for missing name (failed).png\"\n    ],\n    [\n      \"\\\\contactList.spec.js\\\\Contact Management -- Add New Contact -- should show an error message for missing name (failed) (attempt 2).png\"\n    ],\n    [\n      \"\\\\contactList.spec.js\\\\Contact Management -- Add New Contact -- should show an error message for missing name (failed) (attempt 3).png\"\n    ]\n  ]\n}",
+                  "code": "cy.addContact('', '1234567890', 'shivani@example.com');\ncy.contains('Name is required').should('be.visible');",
+                  "err": {
+                    "message": "TypeError: cy.addContact is not a function",
+                    "estack": "TypeError: cy.addContact is not a function\n    at Context.eval (webpack://cypress-realworld-app/./cypress/integration/contactList.spec.js:20:11)",
+                    "diff": null
+                  },
+                  "uuid": "710998f5-8fcf-4f59-b765-72edc0149f71",
+                  "parentUUID": "47b220c0-1cf5-416f-b15f-509ee573cad4",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "should show an error message for invalid email",
+                  "fullTitle": "Contact Management Add New Contact should show an error message for invalid email",
+                  "timedOut": null,
+                  "duration": 177,
+                  "state": "failed",
+                  "speed": null,
+                  "pass": false,
+                  "fail": true,
+                  "pending": false,
+                  "context": "{\n  \"title\": \"cypress-mochawesome-reporter-screenshots\",\n  \"value\": [\n    [\n      \"\\\\contactList.spec.js\\\\Contact Management -- Add New Contact -- should show an error message for invalid email (failed).png\"\n    ],\n    [\n      \"\\\\contactList.spec.js\\\\Contact Management -- Add New Contact -- should show an error message for invalid email (failed) (attempt 2).png\"\n    ],\n    [\n      \"\\\\contactList.spec.js\\\\Contact Management -- Add New Contact -- should show an error message for invalid email (failed) (attempt 3).png\"\n    ]\n  ]\n}",
+                  "code": "cy.addContact('Shivani', '1234567890', 'shivaniexample.com');\ncy.contains('Email is invalid').should('be.visible');",
+                  "err": {
+                    "message": "TypeError: cy.addContact is not a function",
+                    "estack": "TypeError: cy.addContact is not a function\n    at Context.eval (webpack://cypress-realworld-app/./cypress/integration/contactList.spec.js:26:11)",
+                    "diff": null
+                  },
+                  "uuid": "d23ea046-b704-440e-bc82-4c408fdf3948",
+                  "parentUUID": "47b220c0-1cf5-416f-b15f-509ee573cad4",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "should show an error message for missing phone number",
+                  "fullTitle": "Contact Management Add New Contact should show an error message for missing phone number",
+                  "timedOut": null,
+                  "duration": 185,
+                  "state": "failed",
+                  "speed": null,
+                  "pass": false,
+                  "fail": true,
+                  "pending": false,
+                  "context": "{\n  \"title\": \"cypress-mochawesome-reporter-screenshots\",\n  \"value\": [\n    [\n      \"\\\\contactList.spec.js\\\\Contact Management -- Add New Contact -- should show an error message for missing phone number (failed).png\"\n    ],\n    [\n      \"\\\\contactList.spec.js\\\\Contact Management -- Add New Contact -- should show an error message for missing phone number (failed) (attempt 2).png\"\n    ],\n    [\n      \"\\\\contactList.spec.js\\\\Contact Management -- Add New Contact -- should show an error message for missing phone number (failed) (attempt 3).png\"\n    ]\n  ]\n}",
+                  "code": "cy.addContact('Shivani', '', 'shivani@example.com');\ncy.contains('Phone number is required').should('be.visible');",
+                  "err": {
+                    "message": "TypeError: cy.addContact is not a function",
+                    "estack": "TypeError: cy.addContact is not a function\n    at Context.eval (webpack://cypress-realworld-app/./cypress/integration/contactList.spec.js:32:11)",
+                    "diff": null
+                  },
+                  "uuid": "906a88ff-0ab2-4ed5-97c6-e7c033132fbb",
+                  "parentUUID": "47b220c0-1cf5-416f-b15f-509ee573cad4",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [],
+              "failures": [
+                "342d7d10-a5f3-4700-93ea-09428a07615f",
+                "710998f5-8fcf-4f59-b765-72edc0149f71",
+                "d23ea046-b704-440e-bc82-4c408fdf3948",
+                "906a88ff-0ab2-4ed5-97c6-e7c033132fbb"
+              ],
+              "pending": [],
+              "skipped": [],
+              "duration": 721,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "887fce40-4e3e-476e-a549-986cba861164",
+              "title": "Contact List Updation",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "should display the added contact in the list",
+                  "fullTitle": "Contact Management Contact List Updation should display the added contact in the list",
+                  "timedOut": null,
+                  "duration": 186,
+                  "state": "failed",
+                  "speed": null,
+                  "pass": false,
+                  "fail": true,
+                  "pending": false,
+                  "context": "{\n  \"title\": \"cypress-mochawesome-reporter-screenshots\",\n  \"value\": [\n    [\n      \"\\\\contactList.spec.js\\\\Contact Management -- Contact List Updation -- should display the added contact in the list (failed).png\"\n    ],\n    [\n      \"\\\\contactList.spec.js\\\\Contact Management -- Contact List Updation -- should display the added contact in the list (failed) (attempt 2).png\"\n    ],\n    [\n      \"\\\\contactList.spec.js\\\\Contact Management -- Contact List Updation -- should display the added contact in the list (failed) (attempt 3).png\"\n    ]\n  ]\n}",
+                  "code": "cy.addContact('Shivani', '1234567890', 'shivani@example.com');\ncy.visit(`${baseUrl}/contacts`);\ncy.contains('Shivani').should('be.visible');",
+                  "err": {
+                    "message": "TypeError: cy.addContact is not a function",
+                    "estack": "TypeError: cy.addContact is not a function\n    at Context.eval (webpack://cypress-realworld-app/./cypress/integration/contactList.spec.js:41:11)",
+                    "diff": null
+                  },
+                  "uuid": "bd8d78c8-fe43-4cf6-a40a-5d41b0ec25d7",
+                  "parentUUID": "887fce40-4e3e-476e-a549-986cba861164",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "should not display the contact in the list due to a system error",
+                  "fullTitle": "Contact Management Contact List Updation should not display the contact in the list due to a system error",
+                  "timedOut": null,
+                  "duration": 29,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "// Simulate a system error scenario\n// This is usually done by manipulating the backend or using mock data",
+                  "err": {},
+                  "uuid": "26a9624a-fe51-4d11-9507-53421caf81a3",
+                  "parentUUID": "887fce40-4e3e-476e-a549-986cba861164",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "26a9624a-fe51-4d11-9507-53421caf81a3"
+              ],
+              "failures": [
+                "bd8d78c8-fe43-4cf6-a40a-5d41b0ec25d7"
+              ],
+              "pending": [],
+              "skipped": [],
+              "duration": 215,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "62d068ef-86d1-411f-ba26-4b5a686aeda4",
+              "title": "Contact Details Display",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "should display correct contact details",
+                  "fullTitle": "Contact Management Contact Details Display should display correct contact details",
+                  "timedOut": null,
+                  "duration": 180,
+                  "state": "failed",
+                  "speed": null,
+                  "pass": false,
+                  "fail": true,
+                  "pending": false,
+                  "context": "{\n  \"title\": \"cypress-mochawesome-reporter-screenshots\",\n  \"value\": [\n    [\n      \"\\\\contactList.spec.js\\\\Contact Management -- Contact Details Display -- should display correct contact details (failed).png\"\n    ],\n    [\n      \"\\\\contactList.spec.js\\\\Contact Management -- Contact Details Display -- should display correct contact details (failed) (attempt 2).png\"\n    ],\n    [\n      \"\\\\contactList.spec.js\\\\Contact Management -- Contact Details Display -- should display correct contact details (failed) (attempt 3).png\"\n    ]\n  ]\n}",
+                  "code": "cy.addContact('Shivani', '1234567890', 'shivani@example.com');\ncy.checkContactDetails('Shivani', '1234567890', 'shivani@example.com');",
+                  "err": {
+                    "message": "TypeError: cy.addContact is not a function",
+                    "estack": "TypeError: cy.addContact is not a function\n    at Context.eval (webpack://cypress-realworld-app/./cypress/integration/contactList.spec.js:57:11)",
+                    "diff": null
+                  },
+                  "uuid": "aac4d0be-4eb4-4f2d-96cb-19af4407e972",
+                  "parentUUID": "62d068ef-86d1-411f-ba26-4b5a686aeda4",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "should display incorrect contact details due to a system error",
+                  "fullTitle": "Contact Management Contact Details Display should display incorrect contact details due to a system error",
+                  "timedOut": null,
+                  "duration": 30,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "// Simulate a system error scenario\n// This is usually done by manipulating the backend or using mock data",
+                  "err": {},
+                  "uuid": "e1899b23-54b7-44ea-905a-f722047b10d0",
+                  "parentUUID": "62d068ef-86d1-411f-ba26-4b5a686aeda4",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "e1899b23-54b7-44ea-905a-f722047b10d0"
+              ],
+              "failures": [
+                "aac4d0be-4eb4-4f2d-96cb-19af4407e972"
+              ],
+              "pending": [],
+              "skipped": [],
+              "duration": 210,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            }
+          ],
+          "passes": [],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress\\reports\\html\\.jsons"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

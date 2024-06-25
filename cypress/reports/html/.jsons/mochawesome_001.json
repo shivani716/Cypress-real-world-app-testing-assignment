@@ -1,0 +1,303 @@
+{
+  "stats": {
+    "suites": 3,
+    "tests": 8,
+    "passes": 2,
+    "pending": 0,
+    "failures": 6,
+    "start": "2024-06-24T18:16:55.740Z",
+    "end": "2024-06-24T18:17:53.022Z",
+    "duration": 57282,
+    "testsRegistered": 8,
+    "passPercent": 25,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "dd9ad75d-a538-4c09-9bb1-2cedc4080298",
+      "title": "",
+      "fullFile": "cypress\\integration\\notification.spec.js",
+      "file": "cypress\\integration\\notification.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "11121e94-0fe5-4d24-b23a-2a013b50fe92",
+          "title": "Notification Management",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [],
+          "suites": [
+            {
+              "uuid": "f473c824-ce99-4a28-a391-c92c39ff60f8",
+              "title": "Notifications",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "should display a notification for a successful payment",
+                  "fullTitle": "Notification Management Notifications should display a notification for a successful payment",
+                  "timedOut": null,
+                  "duration": 4491,
+                  "state": "failed",
+                  "speed": null,
+                  "pass": false,
+                  "fail": true,
+                  "pending": false,
+                  "context": "{\n  \"title\": \"cypress-mochawesome-reporter-screenshots\",\n  \"value\": [\n    [\n      \"\\\\notification.spec.js\\\\Notification Management -- Notifications -- should display a notification for a successful payment (failed).png\"\n    ],\n    [\n      \"\\\\notification.spec.js\\\\Notification Management -- Notifications -- should display a notification for a successful payment (failed) (attempt 2).png\"\n    ],\n    [\n      \"\\\\notification.spec.js\\\\Notification Management -- Notifications -- should display a notification for a successful payment (failed) (attempt 3).png\"\n    ]\n  ]\n}",
+                  "code": "cy.initiatePayment('Shivani', 'Neha', 100);\ncy.contains('Payment successful').should('be.visible');",
+                  "err": {
+                    "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `input[name=\"recipient\"]`, but never found it.",
+                    "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `input[name=\"recipient\"]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.js:27:7)",
+                    "diff": null
+                  },
+                  "uuid": "64911620-6e1a-45da-83ff-5c48996cffe3",
+                  "parentUUID": "f473c824-ce99-4a28-a391-c92c39ff60f8",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "should display a notification for a received payment",
+                  "fullTitle": "Notification Management Notifications should display a notification for a received payment",
+                  "timedOut": null,
+                  "duration": 4476,
+                  "state": "failed",
+                  "speed": null,
+                  "pass": false,
+                  "fail": true,
+                  "pending": false,
+                  "context": "{\n  \"title\": \"cypress-mochawesome-reporter-screenshots\",\n  \"value\": [\n    [\n      \"\\\\notification.spec.js\\\\Notification Management -- Notifications -- should display a notification for a received payment (failed).png\"\n    ],\n    [\n      \"\\\\notification.spec.js\\\\Notification Management -- Notifications -- should display a notification for a received payment (failed) (attempt 2).png\"\n    ],\n    [\n      \"\\\\notification.spec.js\\\\Notification Management -- Notifications -- should display a notification for a received payment (failed) (attempt 3).png\"\n    ]\n  ]\n}",
+                  "code": "cy.receivePayment('Neha', 'Shivani', 100);\ncy.contains('Payment received').should('be.visible');",
+                  "err": {
+                    "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `input[name=\"receiver\"]`, but never found it.",
+                    "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `input[name=\"receiver\"]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.js:33:7)",
+                    "diff": null
+                  },
+                  "uuid": "91a248e2-73e4-4395-b964-d0b2d8bab7f8",
+                  "parentUUID": "f473c824-ce99-4a28-a391-c92c39ff60f8",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "should display a notification for adding a new contact",
+                  "fullTitle": "Notification Management Notifications should display a notification for adding a new contact",
+                  "timedOut": null,
+                  "duration": 133,
+                  "state": "failed",
+                  "speed": null,
+                  "pass": false,
+                  "fail": true,
+                  "pending": false,
+                  "context": "{\n  \"title\": \"cypress-mochawesome-reporter-screenshots\",\n  \"value\": [\n    [\n      \"\\\\notification.spec.js\\\\Notification Management -- Notifications -- should display a notification for adding a new contact (failed).png\"\n    ],\n    [\n      \"\\\\notification.spec.js\\\\Notification Management -- Notifications -- should display a notification for adding a new contact (failed) (attempt 2).png\"\n    ],\n    [\n      \"\\\\notification.spec.js\\\\Notification Management -- Notifications -- should display a notification for adding a new contact (failed) (attempt 3).png\"\n    ]\n  ]\n}",
+                  "code": "cy.addContact('Shivani', 'Vaidya', 'neha@example.com');\ncy.contains('New contact added').should('be.visible');",
+                  "err": {
+                    "message": "TypeError: cy.addContact is not a function",
+                    "estack": "TypeError: cy.addContact is not a function\n    at Context.eval (webpack://cypress-realworld-app/./cypress/integration/notification.spec.js:26:11)",
+                    "diff": null
+                  },
+                  "uuid": "5fd569ce-59db-4ba7-9cdd-7a3bcf51fa94",
+                  "parentUUID": "f473c824-ce99-4a28-a391-c92c39ff60f8",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "should not display a notification due to a system error",
+                  "fullTitle": "Notification Management Notifications should not display a notification due to a system error",
+                  "timedOut": null,
+                  "duration": 28,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "// Simulate a system error scenario\n// This is usually done by manipulating the backend or using mock data",
+                  "err": {},
+                  "uuid": "f0f799e3-e881-4276-bd79-65f5a6f1b5a7",
+                  "parentUUID": "f473c824-ce99-4a28-a391-c92c39ff60f8",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "f0f799e3-e881-4276-bd79-65f5a6f1b5a7"
+              ],
+              "failures": [
+                "64911620-6e1a-45da-83ff-5c48996cffe3",
+                "91a248e2-73e4-4395-b964-d0b2d8bab7f8",
+                "5fd569ce-59db-4ba7-9cdd-7a3bcf51fa94"
+              ],
+              "pending": [],
+              "skipped": [],
+              "duration": 9128,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "9d5c8e9d-97c0-4d8a-a68c-6ab5dba8d978",
+              "title": "Dismissing Notifications",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "should allow a user to dismiss a notification for a successful payment",
+                  "fullTitle": "Notification Management Dismissing Notifications should allow a user to dismiss a notification for a successful payment",
+                  "timedOut": null,
+                  "duration": 4530,
+                  "state": "failed",
+                  "speed": null,
+                  "pass": false,
+                  "fail": true,
+                  "pending": false,
+                  "context": "{\n  \"title\": \"cypress-mochawesome-reporter-screenshots\",\n  \"value\": [\n    [\n      \"\\\\notification.spec.js\\\\Notification Management -- Dismissing Notifications -- should allow a user to dismiss a notification for a successful payment (failed).png\"\n    ],\n    [\n      \"\\\\notification.spec.js\\\\Notification Management -- Dismissing Notifications -- should allow a user to dismiss a notification for a successful payment (failed) (attempt 2).png\"\n    ],\n    [\n      \"\\\\notification.spec.js\\\\Notification Management -- Dismissing Notifications -- should allow a user to dismiss a notification for a successful payment (failed) (attempt 3).png\"\n    ]\n  ]\n}",
+                  "code": "cy.initiatePayment('Shivani', 'Neha', 100);\ncy.contains('Payment successful').should('be.visible');\ncy.contains('Payment successful').parent().find('.dismiss-button').click();\ncy.contains('Payment successful').should('not.exist');",
+                  "err": {
+                    "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `input[name=\"recipient\"]`, but never found it.",
+                    "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `input[name=\"recipient\"]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.js:27:7)",
+                    "diff": null
+                  },
+                  "uuid": "53688346-791f-436b-b077-e2289d6d3468",
+                  "parentUUID": "9d5c8e9d-97c0-4d8a-a68c-6ab5dba8d978",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "should allow a user to dismiss a notification for a received payment",
+                  "fullTitle": "Notification Management Dismissing Notifications should allow a user to dismiss a notification for a received payment",
+                  "timedOut": null,
+                  "duration": 4678,
+                  "state": "failed",
+                  "speed": null,
+                  "pass": false,
+                  "fail": true,
+                  "pending": false,
+                  "context": "{\n  \"title\": \"cypress-mochawesome-reporter-screenshots\",\n  \"value\": [\n    [\n      \"\\\\notification.spec.js\\\\Notification Management -- Dismissing Notifications -- should allow a user to dismiss a notification for a received payment (failed).png\"\n    ],\n    [\n      \"\\\\notification.spec.js\\\\Notification Management -- Dismissing Notifications -- should allow a user to dismiss a notification for a received payment (failed) (attempt 2).png\"\n    ],\n    [\n      \"\\\\notification.spec.js\\\\Notification Management -- Dismissing Notifications -- should allow a user to dismiss a notification for a received payment (failed) (attempt 3).png\"\n    ]\n  ]\n}",
+                  "code": "cy.receivePayment('Neha', 'Shivani', 100);\ncy.contains('Payment received').should('be.visible');\ncy.contains('Payment received').parent().find('.dismiss-button').click();\ncy.contains('Payment received').should('not.exist');",
+                  "err": {
+                    "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `input[name=\"receiver\"]`, but never found it.",
+                    "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `input[name=\"receiver\"]`, but never found it.\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.js:33:7)",
+                    "diff": null
+                  },
+                  "uuid": "b36c9a63-06d9-444d-9464-6b04827876d3",
+                  "parentUUID": "9d5c8e9d-97c0-4d8a-a68c-6ab5dba8d978",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "should allow a user to dismiss a notification for adding a new contact",
+                  "fullTitle": "Notification Management Dismissing Notifications should allow a user to dismiss a notification for adding a new contact",
+                  "timedOut": null,
+                  "duration": 387,
+                  "state": "failed",
+                  "speed": null,
+                  "pass": false,
+                  "fail": true,
+                  "pending": false,
+                  "context": "{\n  \"title\": \"cypress-mochawesome-reporter-screenshots\",\n  \"value\": [\n    [\n      \"\\\\notification.spec.js\\\\Notification Management -- Dismissing Notifications -- should allow a user to dismiss a notification for adding a new contact (failed).png\"\n    ],\n    [\n      \"\\\\notification.spec.js\\\\Notification Management -- Dismissing Notifications -- should allow a user to dismiss a notification for adding a new contact (failed) (attempt 2).png\"\n    ],\n    [\n      \"\\\\notification.spec.js\\\\Notification Management -- Dismissing Notifications -- should allow a user to dismiss a notification for adding a new contact (failed) (attempt 3).png\"\n    ]\n  ]\n}",
+                  "code": "cy.addContact('Shivani', 'Vaidya', 'neha@example.com');\ncy.contains('New contact added').should('be.visible');\ncy.contains('New contact added').parent().find('.dismiss-button').click();\ncy.contains('New contact added').should('not.exist');",
+                  "err": {
+                    "message": "TypeError: cy.addContact is not a function",
+                    "estack": "TypeError: cy.addContact is not a function\n    at Context.eval (webpack://cypress-realworld-app/./cypress/integration/notification.spec.js:57:11)",
+                    "diff": null
+                  },
+                  "uuid": "56fd2929-9d70-4ca0-9e31-86666716ac04",
+                  "parentUUID": "9d5c8e9d-97c0-4d8a-a68c-6ab5dba8d978",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "should not allow dismissing a notification due to a system error",
+                  "fullTitle": "Notification Management Dismissing Notifications should not allow dismissing a notification due to a system error",
+                  "timedOut": null,
+                  "duration": 81,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "// Simulate a system error scenario\n// This is usually done by manipulating the backend or using mock data",
+                  "err": {},
+                  "uuid": "783f6f1a-0f26-4d23-8f82-236408682455",
+                  "parentUUID": "9d5c8e9d-97c0-4d8a-a68c-6ab5dba8d978",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "783f6f1a-0f26-4d23-8f82-236408682455"
+              ],
+              "failures": [
+                "53688346-791f-436b-b077-e2289d6d3468",
+                "b36c9a63-06d9-444d-9464-6b04827876d3",
+                "56fd2929-9d70-4ca0-9e31-86666716ac04"
+              ],
+              "pending": [],
+              "skipped": [],
+              "duration": 9676,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            }
+          ],
+          "passes": [],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress\\reports\\html\\.jsons"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

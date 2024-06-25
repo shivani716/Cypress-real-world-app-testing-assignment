@@ -1,0 +1,109 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2024-06-24T18:17:55.215Z",
+    "end": "2024-06-24T18:18:07.986Z",
+    "duration": 12771,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "8a83465d-8743-4258-b947-0c91cc9b42ca",
+      "title": "",
+      "fullFile": "cypress\\integration\\transaction.spec.js",
+      "file": "cypress\\integration\\transaction.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "bf7014fa-85d9-4cd9-ba69-eec180773d05",
+          "title": "User Payment Flow",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should allow a user to initiate a payment to another user",
+              "fullTitle": "User Payment Flow should allow a user to initiate a payment to another user",
+              "timedOut": null,
+              "duration": 4135,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-screenshots\",\n  \"value\": [\n    [\n      \"\\\\transaction.spec.js\\\\User Payment Flow -- should allow a user to initiate a payment to another user (failed).png\"\n    ],\n    [\n      \"\\\\transaction.spec.js\\\\User Payment Flow -- should allow a user to initiate a payment to another user (failed) (attempt 2).png\"\n    ],\n    [\n      \"\\\\transaction.spec.js\\\\User Payment Flow -- should allow a user to initiate a payment to another user -- before each hook (failed) (attempt 3).png\"\n    ]\n  ]\n}",
+              "code": "// Assume the initial balance for payer and recipient is known\nconst initialPayerBalance = 500;\nconst initialRecipientBalance = 100;\nconst paymentAmount = 50;\nconst recipientUsername = 'recipientUser';\nconst paymentNote = 'Test payment';\n// Initiate payment\ncy.initiatePayment(recipientUsername, paymentAmount, paymentNote);\n// Verify that the payment is listed in the payment history\ncy.getBySel('nav-personal-tab').click();\ncy.contains(paymentNote).should('be.visible');\n// Verify the balances are updated correctly\ncy.getBySel('sidenav-balance').invoke('text').then(balanceText => {\n  const payerBalance = parseFloat(balanceText.replace('$', ''));\n  expect(payerBalance).to.equal(initialPayerBalance - paymentAmount);\n});\n// Assuming we can log out and log in as the recipient to verify their balance\ncy.getBySel('sidenav-signout').click();\ncy.login('recipientUser', 'password123');\ncy.getBySel('sidenav-balance').invoke('text').then(balanceText => {\n  const recipientBalance = parseFloat(balanceText.replace('$', ''));\n  expect(recipientBalance).to.equal(initialRecipientBalance + paymentAmount);\n});\n// Verify the payment is listed in the recipient's payment history\ncy.getBySel('nav-personal-tab').click();\ncy.contains(paymentNote).should('be.visible');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `input[name=\"username\"]`, but never found it.\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `User Payment Flow`",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `input[name=\"username\"]`, but never found it.\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `User Payment Flow`\n    at Context.eval (webpack://cypress-realworld-app/./cypress/support/commands.js:19:5)",
+                "diff": null
+              },
+              "uuid": "d7613b03-91d5-47f5-9e97-993415623419",
+              "parentUUID": "bf7014fa-85d9-4cd9-ba69-eec180773d05",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "d7613b03-91d5-47f5-9e97-993415623419"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 4135,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress\\reports\\html\\.jsons"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

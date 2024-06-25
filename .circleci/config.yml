@@ -232,3 +232,35 @@ linux-workflow: &linux-workflow
 workflows:
   linux:
     <<: *linux-workflow
+
+
+version: 2.1
+
+orbs:
+  cypress: cypress-io/cypress@1.26.0
+
+workflows:
+  build:
+    jobs:
+      - cypress/run:
+          install-command: yarn install --frozen-lockfile
+          start: yarn start
+          wait-on: 'http://localhost:3000'
+          post-steps:
+            - run:
+                name: Create merged-report Directory
+                command: mkdir cypress/merged-report/
+            - run:
+                name: Merge mochawesome jsons in one file
+                when: always
+                command: npx mochawesome-merge --reportDir cypress/results > cypress/merged-report/merged-report.json
+            - run:
+                name: Generate mochawesome html report
+                when: always
+                command: npx marge cypress/merged-report/merged-report.json -o cypress/mochawesome-html-report
+            - store_artifacts:
+                name: Uploading mochawesome-merged-report.json
+                path: cypress/merged-report
+            - store_artifacts:
+                name: Uploading mochawesome-html-report
+                path: cypress/mochawesome-html-report
